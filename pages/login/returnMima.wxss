@@ -1,0 +1,13 @@
+@import "login.wxss";
+
+.yzBtn {
+  width: 30%;
+  height: 42%;
+  line-height: 66rpx;
+  color: white;
+  font-size: 25rpx;
+  border: 1rpx solid #F0F0F0;
+  margin-left: 10rpx;
+  padding: 0rpx;
+
+}

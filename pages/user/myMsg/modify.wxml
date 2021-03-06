@@ -1,0 +1,45 @@
+ <view>
+ 	<!-- <view style="margin:20rpx" wx:if="{{biaoshi==name}}" >
+ 		<view style="width:100%;text-align:right;"><text>保存</text></view>
+ 		<input id="accountname" name="accountname" placeholder="请输入您的昵称" />
+ 	</view> -->
+
+ 	<view style="margin:20rpx" wx:if="{{biaoshi=='name'}}">
+ 		<view style="width:100%;text-align:right;"><text  style="border: 1rpx solid red;padding: 15rpx;font-size: 26rpx;border-radius: 20rpx;display: block;width: 20%;text-align: center;float: right;" bindtap="xiugai">保存</text></view>
+ 		<input focus='{true}' bindinput='valueInput' id="name" name="name" placeholder="请输入您的姓名" />
+ 	</view>
+ 	<view style="margin:20rpx" wx:if="{{biaoshi=='phone'}}">
+ 		<view style="width:100%;text-align:right;"><text style="border: 1rpx solid red;padding: 15rpx;font-size: 26rpx;border-radius: 20rpx;display: block;width: 20%;text-align: center;float: right;" bindtap="xiugai" >保存</text></view>
+ 		<input focus='{true}' bindinput='valueInput' type="number" id="phone" name="phone" placeholder="请输入您的手机号" />
+ 	</view>
+ 	<view style="margin:20rpx" wx:if="{{biaoshi=='password'}}">
+ 		<view style="width:100%;text-align:right;"><text style="border: 1rpx solid red;padding: 15rpx;font-size: 26rpx;border-radius: 20rpx;display: block;width: 20%;text-align: center;float: right;" bindtap="xiugai">保存</text></view>
+ 		<input focus='{true}' bindinput='valueInput' id="password" name="password" password type="text" placeholder="请输入您的密码" />
+ 	</view>
+ 	<view style="margin:20rpx" wx:if="{{biaoshi=='companyname'}}">
+ 		<view style="width:100%;text-align:right;"><text style="border: 1rpx solid red;padding: 15rpx;font-size: 26rpx;border-radius: 20rpx;display: block;width: 20%;text-align: center;float: right;" bindtap="xiugai">保存</text></view>
+ 		<input focus='{true}' bindinput='valueInput' id="companyname" name="companyname" type="text" placeholder="请输入您的单位公司全称" />
+ 	</view>
+ 	<view style="margin:20rpx" wx:if="{{biaoshi=='honesty'}}">
+ 		<view style="width:100%;text-align:right;"><text style="border: 1rpx solid red;padding: 15rpx;font-size: 26rpx;border-radius: 20rpx;display: block;width: 20%;text-align: center;float: right;" bindtap="xiugai">保存</text></view>
+ 		<input focus='{true}' bindinput='valueInput' id="honesty" name="honesty" type="text" placeholder="请输入您的统一社会信用代码" />
+ 	</view>
+ 	<view style="margin:20rpx" wx:if="{{biaoshi=='companyaddress'}}">
+ 		<view style="width:100%;text-align:right;"><text style="border: 1rpx solid red;padding: 15rpx;font-size: 26rpx;border-radius: 20rpx;display: block;width: 20%;text-align: center;float: right;" bindtap="xiugai">保存</text></view>
+ 		<input focus='{true}' bindinput='valueInput' id="companyaddress" name="companyaddress" type="text" placeholder="请输入您的单位地址" />
+ 	</view>
+ 	<view style="margin:20rpx" wx:if="{{biaoshi=='companyphone'}}">
+ 		<view style="width:100%;text-align:right;"><text style="border: 1rpx solid red;padding: 15rpx;font-size: 26rpx;border-radius: 20rpx;display: block;width: 20%;text-align: center;float: right;" bindtap="xiugai">保存</text></view>
+ 		<input focus='{true}' bindinput='valueInput' id="companyphone" name="companyphone" type="text" placeholder="请输入您的单位电话" />
+ 	</view>
+ 	<view style="margin:20rpx" wx:if="{{biaoshi=='companybank'}}">
+ 		<view style="width:100%;text-align:right;">
+ 			<text style="border: 1rpx solid red;padding: 15rpx;font-size: 26rpx;border-radius: 20rpx;display: block;width: 20%;text-align: center;float: right;" bindtap="xiugai"> 保存</text>
+ 		</view>
+ 		<input focus='{true}' bindinput='valueInput' id="companybank" name="companybank" type="text" placeholder="请输入您的单位开户银行" />
+ 	</view>
+ 	<view style="margin:20rpx" wx:if="{{biaoshi=='companyaccount'}}">
+ 		<view style="width:100%;text-align:right;"><text style="border: 1rpx solid red;padding: 15rpx;font-size: 26rpx;border-radius: 20rpx;display: block;width: 20%;text-align: center;float: right;" bindtap="xiugai">保存</text></view>
+ 		<input focus='{true}' bindinput='valueInput' id="companyaccount" name="companyaccount" type="text" placeholder="请输入您的单位银行账号" />
+ 	</view>
+ </view>

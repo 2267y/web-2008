@@ -1,0 +1,14 @@
+ <view wx:for="{{likePro}}" wx:key="index" style="display:flex;padding: 10rpx;width: 90%;background-color: white;margin: 20rpx auto;border-radius: 20rpx;">
+ 	<view>
+ 		<image src="{{imgUrl}}productimages/{{item.autoname}}" bindtap="goDetail"  data-type="{{item.type}}" data-proid="{{item.id}}"  style="width:250rpx;height:250rpx"></image>
+ 	</view>
+ 	<view style="line-height: 85rpx;padding-left: 30rpx;">
+ 		<view>{{item.proname}}</view>
+ 		<view>¥ <text style="color:#2EB6AA">{{item.costprice}}</text></view>
+ 		<view><button style="background-color:#EF7896;color:white">立即购买</button></view>
+ 	</view>
+ </view>
+
+ <view wx:if="{{likePro==''}}" style="text-align:center">
+ 	<view style="height:200rpx; margin-top:200rpx">未搜索到任何物品~~~</view>
+ </view>

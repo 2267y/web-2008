@@ -1,0 +1,4 @@
+/* pages/productorder/productorder.wxss */
+page {
+  background-color: #EEEEEE;
+}

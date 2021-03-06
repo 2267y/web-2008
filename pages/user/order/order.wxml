@@ -1,0 +1,270 @@
+<wxs module="dateUtil" src="../../index/convertUtil.wxs"></wxs>
+<view class="navbar">
+	<lable wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">
+		<text>{{item}}</text>
+	</lable>
+</view>
+<!--全部-->
+<view wx:if="{{currentTab==0}}" class='total' style='background-color: #EBEBEB;'>
+	<view wx:if="{{listArray != null}}">
+		<!-- 外层 -->
+		<view wx:for="{{listArray}}" wx:for-item="listItem" wx:for-index="i" wx:key="index" style="background-color: white;">
+			<view style="display:flex;  padding-bottom: 20rpx;font-size: 30rpx;margin-top:20rpx;padding-top: 10rpx;border-bottom: 0.5px solid #F0F0F0;">
+				<view style="flex:3;text-align: center;">
+					<image style="width:50rpx;height:50rpx;" src="/pages/images/ddh.png"></image>
+				</view>
+				<text style="flex:12">订单号:{{listItem.orderno}}</text>
+				<text style="flex:5;font-weight: bolder;color:#6CB92D">{{zhuangTai[i]}}</text>
+			</view>
+			<view wx:for="{{listItem.orderprolist}}" wx:key="index">
+				<view class="shop df" style="display: flex;margin: 10rpx;background-color: white;">
+					<image class="sh_slt" style="width: 250rpx;height: 290rpx; "  mode='aspectFill' src="{{imgUrl}}productimages/{{item.autoname}}"></image>
+					<view class="df_1" style="height: 120rpx;width: 60%;padding: 10rpx 10rpx 0 20rpx;line-height: 60rpx;">
+						<view class="sp_text">
+							<navigator hover-class="changestyle" style="line-height: 100rpx;">
+								<view class="sp_tit ovh1">{{item.proname}}</view>
+								<view class="sp_tit ovh1">规格{{item.specification}}</view>
+								<!--{{item.item.orderprolist[0].proname}}-->
+							</navigator>
+							<view class="sp_jg">￥：{{dateUtil.toFix(item.price)}}</view>
+							<view class="font_12" style="text-align: right;font-size: 40rpx;margin-top: -50rpx;">x {{dateUtil. toAll(item.count)}}</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view style="text-align:right;margin-right: 40rpx;  ">
+				<text>共{{dateUtil.toFix(listItem.totalcount)}}件商品,合计:¥{{dateUtil.toFix(listItem.totalmoney)}}</text>
+			</view>
+			<view style="padding-left: 40rpx;font-size: 30rpx;  padding-bottom: 20rpx;display:flex;padding-top: 15rpx;border-top: 1rpx solid #F0F0F0;">
+				<view style="flex:6">{{listItem.createtime}}</view>
+				<view wx:if="{{zhuangTai[i]=='待付款'}}" bindtap="removOrder" data-id="{{listItem.id}}" style="color:white;background-color: #6CB92D;flex:2;text-align: center;border: 1rpx solid #F0F0F0;padding: 5rpx;border-radius: 10rpx;">
+					删除订单
+				</view>
+				<view wx:if="{{zhuangTai[i]=='待付款'}}" bindtap="submit" data-totalMoney="{{listItem.ordermoney}}" data-orderid="{{listItem.orderno}}" style="color:white;margin-left: 20rpx;flex:2;text-align: center;border: 1rpx solid #F0F0F0;padding: 5rpx;border-radius: 10rpx;background-color:#6CB92D ;">
+					立即付款
+				</view>
+				<view wx:if="{{zhuangTai[i]=='发货完成'}}" bindtap="confirm" data-id="{{listItem.id}}" style="color:white;margin-left: 20rpx;flex:2;text-align: center;border: 1rpx solid #F0F0F0;padding: 5rpx;border-radius: 10rpx;background-color:#6CB92D ;">
+					确认收货
+				</view>
+				<view wx:if="{{zhuangTai[i]=='发货完成'}}" bindtap="goEval" data-id="{{listItem.id}}" style="color:white;margin-left: 20rpx;flex:2;text-align: center;border: 1rpx solid #F0F0F0;padding: 5rpx;border-radius: 10rpx;background-color:#6CB92D ;">
+					去评价
+				</view>
+			</view>
+		</view>
+
+	</view>
+	<!-- 否则 -->
+	<view wx:else>
+		<!-- 外层 -->
+		<view class='cont_count'>
+			<label class='none_tab'>亲,您还暂未下单哦~~</label>
+		</view>
+	</view>
+
+</view>
+
+<view wx:if="{{currentTab==1}}" class='total' style='background-color: #EBEBEB;'>
+	<view wx:if="{{listArray.length>0}}">
+		<!-- 外层 -->
+		<view wx:for="{{listArray}}" wx:for-item="listItem" wx:for-index="i" wx:key="index" style="background-color: white;">
+			<view style="display:flex; padding-bottom: 20rpx;font-size: 30rpx;margin-top:20rpx;padding-top: 10rpx;">
+				<view style="flex:3;text-align: center;">
+					<image style="width:50rpx;height:50rpx;" src="/pages/images/ddh.png"></image>
+				</view>
+				<text style="flex:12">订单号:{{listItem.orderno}}</text>
+				<text style="flex:5;font-weight: bolder;color:#6CB92D">{{zhuangTai[i]}}</text>
+			</view>
+			<view wx:for="{{listItem.orderprolist}}" wx:key="index">
+				<view class="shop df" style="display: flex;margin: 10rpx;background-color: white;">
+					<image class="sh_slt" style="width: 250rpx;height: 290rpx; "  mode='aspectFill'  src="{{imgUrl}}productimages/{{item.autoname}}"></image>
+					<view class="df_1" style="height: 120rpx;width: 60%;padding: 10rpx 10rpx 0 20rpx;line-height: 60rpx;">
+						<view class="sp_text">
+							<navigator hover-class="changestyle" style="line-height: 100rpx;">
+								<view class="sp_tit ovh1">{{item.proname}}</view>
+								<view class="sp_tit ovh1">规格{{item.specification}}</view>
+								<!--{{item.item.orderprolist[0].proname}}-->
+							</navigator>
+							<view class="sp_jg">￥：{{dateUtil.toFix(item.price)}}</view>
+							<view class="font_12" style="text-align: right;font-size: 40rpx;margin-top: -50rpx;">x {{dateUtil. toAll(item.count)}}</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view style="text-align:right;margin-right: 40rpx;  ">
+				<text>共{{dateUtil.toFix(listItem.totalcount)}}件商品,合计:¥{{dateUtil.toFix(listItem.totalmoney)}}</text>
+			</view>
+			<view style="padding-left: 40rpx;font-size: 30rpx;  padding-bottom: 20rpx;display:flex;padding-top: 15rpx;border-top: 1rpx solid gray;">
+				<view style="flex:6">{{listItem.createtime}}</view>
+				<view wx:if="{{zhuangTai[i]=='待付款'}}" bindtap="removOrder" data-id="{{listItem.id}}" style="color:white;background-color: #6CB92D;flex:2;text-align: center;border: 1rpx solid #F0F0F0;padding: 5rpx;border-radius: 10rpx;">
+					删除订单
+				</view>
+				<view wx:if="{{zhuangTai[i]=='待付款'}}" bindtap="submit" data-totalMoney="{{listItem.ordermoney}}" data-orderid="{{listItem.orderno}}" style="color:white;margin-left: 20rpx;flex:2;text-align: center;border: 1rpx solid #F0F0F0;padding: 5rpx;border-radius: 10rpx;background-color:#6CB92D ;">
+					立即付款
+				</view>
+			</view>
+		</view>
+
+	</view>
+	<!-- 否则 -->
+	<view wx:else>
+		<!-- 外层 -->
+		<view class='cont_count'>
+
+			<label class='none_tab'>亲亲,您还暂未下单哦~~</label>
+		</view>
+	</view>
+
+</view>
+
+<view wx:if="{{currentTab==2}}" class='total' style='background-color: #EBEBEB;'>
+	<view wx:if="{{listArray.length>0}}">
+		<!-- 外层 -->
+		<view wx:for="{{listArray}}" wx:for-item="listItem" wx:for-index="i" wx:key="index" style="background-color: white;">
+			<view style="display:flex; padding-bottom: 20rpx;font-size: 30rpx;margin-top:20rpx;padding-top: 10rpx;">
+				<view style="flex:3;text-align: center;">
+					<image style="width:50rpx;height:50rpx;" src="/pages/images/ddh.png"></image>
+				</view>
+				<text style="flex:12">订单号:{{listItem.orderno}}</text>
+				<text style="flex:5;font-weight: bolder;color:#6CB92D">{{zhuangTai[i]}}</text>
+			</view>
+			<view wx:for="{{listItem.orderprolist}}" wx:key="index">
+				<view class="shop df" style="display: flex;margin: 10rpx;background-color: white;">
+					<image class="sh_slt" style="width: 250rpx;height: 290rpx; "  mode='aspectFill'  src="{{imgUrl}}productimages/{{item.autoname}}"></image>
+					<view class="df_1" style="height: 120rpx;width: 60%;padding: 10rpx 10rpx 0 20rpx;line-height: 60rpx;">
+						<view class="sp_text">
+							<navigator hover-class="changestyle" style="line-height: 100rpx;">
+								<view class="sp_tit ovh1">{{item.proname}}</view>
+								<view class="sp_tit ovh1">规格{{item.specification}}</view>
+								<!--{{item.item.orderprolist[0].proname}}-->
+							</navigator>
+							<view class="sp_jg">￥：{{dateUtil.toFix(item.price)}}</view>
+							<view class="font_12" style="text-align: right;font-size: 40rpx;margin-top: -50rpx;">x {{dateUtil. toAll(item.count)}}</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view style="text-align:right;margin-right: 40rpx;  ">
+				<text>共{{dateUtil.toFix(listItem.totalcount)}}件商品,合计:¥{{dateUtil.toFix(listItem.totalmoney)}}</text>
+			</view>
+			<view style="padding-left: 40rpx;font-size: 30rpx;  padding-bottom: 20rpx;display:flex;padding-top: 15rpx;border-top: 1rpx solid #F0F0F0;">
+				<view style="flex:6">{{listItem.createtime}}</view>
+				<view wx:if="{{zhuangTai[i]=='待付款'}}" bindtap="removOrder" data-id="{{listItem.id}}" style="color:white;background-color: #6CB92D;flex:2;text-align: center;border: 1rpx solid #F0F0F0;padding: 5rpx;border-radius: 10rpx;">
+					删除订单
+				</view>
+				<view wx:if="{{zhuangTai[i]=='待付款'}}" bindtap="submit" data-totalMoney="{{listItem.ordermoney}}" data-orderid="{{listItem.orderno}}" style="color:white;margin-left: 20rpx;flex:2;text-align: center;border: 1rpx solid #F0F0F0;padding: 5rpx;border-radius: 10rpx;background-color:#6CB92D ;">
+					立即付款
+				</view>
+			</view>
+		</view>
+
+	</view>
+	<!-- 否则 -->
+	<view wx:else>
+		<!-- 外层 -->
+		<view class='cont_count'>
+
+			<label class='none_tab'>您还暂未下单哦~~</label>
+		</view>
+	</view>
+
+</view>
+
+
+<view wx:if="{{currentTab==3}}" class='total' style='background-color: #EBEBEB;'>
+	<view wx:if="{{listArray.length>0}}">
+		<!-- 外层 -->
+		<view wx:for="{{listArray}}" wx:for-item="listItem" wx:for-index="i" wx:key="index" style="background-color: white;">
+			<view style="display:flex; padding-bottom: 20rpx;font-size: 30rpx;margin-top:20rpx;padding-top: 10rpx;">
+				<view style="flex:3;text-align: center;">
+					<image style="width:50rpx;height:50rpx;" src="/pages/images/ddh.png"></image>
+				</view>
+				<text style="flex:12">订单号:{{listItem.orderno}}</text>
+				<text style="flex:5;font-weight: bolder;color:#6CB92D">{{zhuangTai[i]}}</text>
+			</view>
+			<view wx:for="{{listItem.orderprolist}}" wx:key="index">
+				<view class="shop df" style="display: flex;margin: 10rpx;background-color: white;">
+					<image class="sh_slt" sstyle="width: 250rpx;height: 290rpx; "  mode='aspectFill'  src="{{imgUrl}}productimages/{{item.autoname}}"></image>
+					<view class="df_1" style="height: 120rpx;width: 60%;padding: 10rpx 10rpx 0 20rpx;line-height: 60rpx;">
+						<view class="sp_text">
+							<navigator hover-class="changestyle" style="line-height: 100rpx;">
+								<view class="sp_tit ovh1">{{item.proname}}</view>
+								<view class="sp_tit ovh1">规格{{item.specification}}</view>
+								<!--{{item.item.orderprolist[0].proname}}-->
+							</navigator>
+							<view class="sp_jg">￥：{{dateUtil.toFix(item.price)}}</view>
+							<view class="font_12" style="text-align: right;font-size: 40rpx;margin-top: -50rpx;">x {{dateUtil. toAll(item.count)}}</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view style="text-align:right;margin-right: 40rpx;  ">
+				<text>共{{dateUtil.toFix(listItem.totalcount)}}件商品,合计:¥{{dateUtil.toFix(listItem.totalmoney)}}</text>
+			</view>
+			<view style="padding-left: 40rpx;font-size: 30rpx;  padding-bottom: 20rpx;display:flex;padding-top: 15rpx;border-top: 1rpx solid #F0F0F0;">
+				<view style="flex:6">{{listItem.createtime}}</view>
+				<view wx:if="{{zhuangTai[i]=='发货完成'}}" bindtap="confirm" data-id="{{listItem.id}}" style="color:white;margin-left: 20rpx;flex:2;text-align: center;border: 1rpx solid #F0F0F0;padding: 5rpx;border-radius: 10rpx;background-color:#6CB92D ;">
+					确认收货
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- 否则 -->
+	<view wx:else>
+		<!-- 外层 -->
+		<view class='cont_count'>
+
+			<label class='none_tab'>您还未下单哦~~</label>
+		</view>
+	</view>
+
+</view>
+
+<view wx:if="{{currentTab==4}}" class='total' style='background-color: #EBEBEB;'>
+	<view wx:if="{{listArray.length>0}}">
+		<!-- 外层 -->
+		<view wx:for="{{listArray}}" wx:for-item="listItem" wx:for-index="i" wx:key="index" style="background-color: white;">
+			<view style="display:flex; padding-bottom: 20rpx;font-size: 30rpx;margin-top:20rpx;padding-top: 10rpx;">
+				<view style="flex:3;text-align: center;">
+					<image style="width:50rpx;height:50rpx;" src="/pages/images/ddh.png"></image>
+				</view>
+				<text style="flex:12">订单号:{{listItem.orderno}}</text>
+				<text style="flex:5;font-weight: bolder;color:#6CB92D">{{zhuangTai[i]}}</text>
+			</view>
+			<view wx:for="{{listItem.orderprolist}}" wx:key="index">
+				<view class="shop df" style="display: flex;margin: 10rpx;background-color: white;">
+					<image class="sh_slt" style="width: 250rpx;height: 290rpx; "  mode='aspectFill'  src="{{imgUrl}}productimages/{{item.autoname}}"></image>
+					<view class="df_1" style="height: 120rpx;width: 60%;padding: 10rpx 10rpx 0 20rpx;line-height: 60rpx;">
+						<view class="sp_text">
+							<navigator hover-class="changestyle" style="line-height: 100rpx;">
+								<view class="sp_tit ovh1">{{item.proname}}</view>
+								<view class="sp_tit ovh1">规格{{item.specification}}</view>
+								<!--{{item.item.orderprolist[0].proname}}-->
+							</navigator>
+							<view class="sp_jg">￥：{{dateUtil.toFix(item.price)}}</view>
+							<view class="font_12" style="text-align: right;font-size: 40rpx;margin-top: -50rpx;">x {{dateUtil. toAll(item.count)}}</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view style="text-align:right;margin-right: 40rpx;  ">
+				<text>共{{dateUtil.toFix(listItem.totalcount)}}件商品,合计:¥{{dateUtil.toFix(listItem.totalmoney)}}</text>
+			</view>
+			<view style="padding-left: 40rpx;font-size: 30rpx;  padding-bottom: 20rpx;display:flex;padding-top: 15rpx;border-top: 1rpx solid #F0F0F0;">
+				<view style="flex:6">{{listItem.createtime}}</view>
+
+				<view wx:if="{{zhuangTai[i]=='待评价'}}" bindtap="goEval" data-orderid="{{listItem.id}}" style="color:white;margin-left: 20rpx;flex:2;text-align: center;border: 1rpx solid #F0F0F0;padding: 5rpx;border-radius: 10rpx;background-color:#6CB92D ;">
+					去评价
+				</view>
+			</view>
+		</view>
+
+	</view>
+	<!-- 否则 -->
+	<view wx:else>
+		<!-- 外层 -->
+		<view class='cont_count'>
+			<label class='none_tab'>亲,您暂时还未下单哦~~</label>
+		</view>
+	</view>
+
+</view>

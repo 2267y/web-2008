@@ -1,0 +1,55 @@
+{
+	"pages": [
+		"pages/index/index",
+		"pages/class/class",
+		"pages/addressList/addressList",
+		"pages/addressList/address",
+		"pages/sumbit/sumbit",
+		"pages/submitorder/submitorder",
+		"pages/shopcar/shopcar",
+		"pages/user/user",
+		"pages/user/order/order",
+		"pages/detail/detail",
+		"pages/login/login",
+		"pages/notic/notic"
+
+	],
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#fff",
+		"navigationBarTitleText": "华抗包装",
+		"navigationBarTextStyle": "black"
+	},
+	"tabBar": {
+		"selectedColor": "#E89099",
+		"backgroundColor": "#EFEFEF",
+		"list": [{ 
+				"pagePath": "pages/index/index",
+				"text": "首页",
+				"iconPath": "pages/images/index.png",
+				"selectedIconPath": "pages/images/indexActive.png"
+			},
+			{
+				"pagePath": "pages/class/class",
+				"text": "分类",
+				"iconPath": "pages/images/class.png",
+				"selectedIconPath": "pages/images/classActive.png"
+
+			},
+			{
+				"pagePath": "pages/shopcar/shopcar",
+				"text": "购物车",
+				"iconPath": "pages/images/car.png",
+				"selectedIconPath": "pages/images/carActive.png"
+			},
+			{
+				"pagePath": "pages/user/user",
+				"text": "我的",
+				"iconPath": "pages/images/user.png",
+				"selectedIconPath": "pages/images/userActive.png"
+			}
+		]
+	},
+	"style": "v2",
+	"sitemapLocation": "sitemap.json"
+}

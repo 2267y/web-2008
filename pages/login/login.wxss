@@ -1,0 +1,99 @@
+/* pages/login/login.wxss */
+.bg {
+  height: 1700rpx;
+  width: 100%;
+}
+.topimg {
+  height: 70rpx;
+  width: 175rpx;
+}
+
+.login {
+  position: relative;
+}
+
+.top {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 40rpx;
+
+}
+
+.loginbox {
+  height: 317rpx;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 30rpx;
+  background: #fff;
+  opacity: 0.8;
+ 
+  margin-bottom: 60rpx;
+  display: flex;
+  flex-flow: column;
+  /* padding-top: 70rpx; */
+}
+.phone{
+  border-top-right-radius: 20rpx;
+  border-top-left-radius: 20rpx;
+}
+button {
+  background-color: #6CB92D;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 40rpx;
+}
+
+ 
+
+.phone,
+.user,
+.pwd {
+  height: 80rpx;
+  flex: 1;
+  display: flex;
+  text-align: center;
+  border: none;
+  font-size: 30rpx;
+  color: #999;
+  background: #fff;
+    opacity: 0.8;
+ 
+}
+.user{
+  border-top-right-radius: 20rpx;
+  border-top-left-radius: 20rpx;
+}
+.pwd{
+  border-bottom-right-radius: 20rpx;
+  border-bottom-left-radius: 20rpx;
+}
+
+input {
+ 
+  caret-color:red;
+  height: 100%;
+
+}
+
+.user>image,
+.pwd>image {
+  height: 50rpx;
+  width: 50rpx;
+}
+
+.login_img {
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 13px;
+  padding: 10rpx;
+  margin-top: 55rpx;
+  
+}
+
+.phone_img {
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 13px;
+  margin-top: 55rpx;
+  
+}

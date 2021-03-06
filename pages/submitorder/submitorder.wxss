@@ -1,0 +1,35 @@
+/* pages/user/jfshopbuy.wxss */
+page {
+  height: 1165rpx;
+  position: relative;
+  background-color: rgb(235, 235, 235);
+}
+
+.img {
+  height: 50rpx;
+  width: 50rpx;
+  
+}
+
+.bottom {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  bottom: 0rpx;
+}
+
+.left {
+  flex: 1;
+  text-align: center;
+  padding: 25rpx;
+  background-color: rgb(232, 232, 232);
+}
+
+.right {
+  color: white;
+  background-image: linear-gradient(to right, #FF0301 , #FF7600);
+  flex: 1;
+  text-align: center;
+  padding: 25rpx;
+  bottom: 0rpx;
+}

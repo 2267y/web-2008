@@ -1,0 +1,16 @@
+<!--pages/login/login.wxml-->
+
+
+<view class="login" >
+	<view class="loginbox">
+		<view class="pwd">
+			<image class="login_img" src="../images/pwd.png"></image> <input password="true"  placeholder="请输入密码" bindinput="getMiMa"></input>
+		</view>
+		<view class="pwd">
+			<image class="login_img" src="../images/pwd.png"></image> <input password="true" placeholder="请再次输入密码" bindinput="getQueRenMiMa"></input>
+		</view>
+	</view>
+	<button bindtap="zhuce" style="background-color:#6CB92D;color:white;width: 70%;border-radius: 40rpx;">完成</button>
+	<!-- <button bindtap="zhuce" style="background-color:#FFCD42">注册</button> -->
+</view>
+

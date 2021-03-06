@@ -1,0 +1,84 @@
+<view wx:if="{{ischeck!='false'}}">
+	<view class="df top">
+		<image class="checkAllBox " src="/pages/images/danxuan.png" hidden="{{allselect}}" catchtap="allcheckTap"></image>
+		<image class="checkAllBox " src="/pages/images/danxuanactive.png" hidden="{{!allselect}}" catchtap="allcheckTap"></image>
+		<view class="fs_12 fc_333 f1" catchtap="allcheckTap">全选</view>
+		<view style="margin-left:0rpx" class="fc_333 fs_12 totalPrice f1"></view>
+		<!--小计:¥{{totalPrice}} -->
+		<view class="btn editbtn fs_12 fc_666 f1" style="line-height: 85rpx;background-color:#6CB92D;border:1rpx solid #6CB92D" catchtap='adminTap'>编辑</view>
+	</view>
+</view>
+<view wx:if="{{ischeck!='false'}}" class="cart_body">
+	<view class="cart_item">
+		<view style="width:100%;text-align:center; " wx:if="{{carNull}}">空空如也</view>
+		<label wx:for="{{cartData}}" wx:key="this">
+			<!-- 选中的按钮,  就两张图片 -->
+			<view class="check_box" data-index="{{index}}" catchtap="checkTap">
+				<image class="check_img" hidden="{{item.checked}}" src="/pages/images/dx.png"></image>
+				<image class="check_img" hidden="{{!item.checked}}" src="/pages/images/dxactive.png"></image>
+			</view>
+			<view class="cart_image" bindtap="godetail" data-proid="{{item.proid}}" data-type="{{item.type}}">
+				<image style="width: 100%;height: 110%;margin: 0 auto;" mode='aspectFill' src=' {{selected.image || spec.productFirstImage}}' src="{{imgUrl}}/productimages/{{item.autoname}}" mode='aspectFill'></image>
+			</view>
+			<view class="cart_content">
+				<view class="content_title fs_12 fc_333">{{item.proname}}</view>
+				<view><text style="font-size:25rpx;color:gray">{{item.specification}}</text></view>
+				<view class="content_price">
+					<view class="fc_price fs_18 fw_bold" style="color:#E89099">¥{{item.price}}</view>
+					<view class="goods_number_container">
+						<view class="goods_number_icon_container">
+							<text class="goods_number_icon"   data-types="minus" data-index="{{index}}" catchtap="numchangeTap">-</text>
+						</view>
+						<view class="goods_number">{{item.count}}</view>
+						<view class="goods_number_icon_container">
+							<text class="goods_number_icon"  data-types="add" data-index="{{index}}" catchtap="numchangeTap">+</text>
+						</view>
+					</view>
+				</view>
+			</view>
+		</label>
+	</view>
+</view>
+<!-- <view wx:if="{{ischeck!='false'}}" style="margin-bottom: 100rpx;margin-top: 10rpx;background-color: white;width: 100%;">
+	<view style=" padding:20rpx">今日热销</view>
+ <view>
+		<view>
+			<view>
+				<image style="width:50rpx;height:50rpx" src="http://118.190.47.231/aichongyaoye//productimages/8ce346f80d1b4d7a96c781686e381a23.png"></image>
+			</view>
+			<view><text>84消毒液{{}}</text></view>
+			<view><text style="color:red">¥</text></view>
+		</view>
+	</view>  
+	<view>
+	  <view style="margin-left:20rpx">大家都在买</view> 
+		<view style="height:400rpx">
+			<scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}" style="background-color:white;line-height: 60rpx;">
+				<block wx:for-items="{{newsTab}}" wx:key="index">
+					<view data-current="{{index}}" style="overflow: hidden;" class="tab-item" bindtap="godetail" data-id="{{item.proid}}" data-type="{{item.type}}">
+				 <view data-current="{{index}}" class="tab-item {{currentTab == index ?'active':''}}" bindtap="swichNav">  
+						<view class="dfc" style="text-align:center;border: 1rpx solid ##F0F0F0;">
+							<view class="f1">
+								<image class="bimg" src="{{imgUrl}}/productimages/{{item.autoname}}"></image>
+							</view>
+							<view><text>{{item.proname}}</text></view>
+							<view style="color:red">¥ {{item.price}}/{{item.secondunitname}}</view>
+						</view>
+					</view>
+				</block>
+			</scroll-view>
+		</view>
+	</view>
+</view> -->
+<!-- 全选 计算价格 编辑 结算 -->
+<view wx:if="{{ischeck!='false'}}" class="cart_total_container">
+	<view class="fc_333 fs_12 totalPrice">合计：¥ <text  style="color:#2EB6AA">{{totalPrice}}</text></view>
+	<view class="clearingBox" wx:if="{{adminShow}}">
+		<view class="btn clearbtn fs_12" bindtap="toApply" data-totalPric="{{totalPrice}}" style="background-image: linear-gradient(to right, #FF9900 , #FF7600);">去结算({{selectArr.length}})</view>
+	</view>
+	<view class="clearingBox" wx:else>
+		<view class="btn editbtn fs_12 fc_666" catchtap="deleteshopTap">删除</view>
+		<view class="btn clearbtn fs_12" catchtap='adminTap'>完成</view>
+	</view>
+</view>
+ 

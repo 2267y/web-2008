@@ -1,0 +1,20 @@
+<!--pages/login/login.wxml-->
+
+
+<view class="login">
+	<view class="loginbox"  >
+		<view class="tt">
+			<image style="margin-left: 60rpx;margin-top: 25rpx;width: 50rpx;height: 50rpx;" src="../images/my.png"></image> <input value="{{jsphone}}" placeholder="请输入你的手机号" bindinput="getPhone" style="height: 100rpx;text-align: center;"></input>
+		</view>
+		<view class="tt">
+			<image style="margin-left: 60rpx;margin-top: 25rpx;width: 50rpx;height: 50rpx;" src="../images/pwd.png"></image> <input password="true" placeholder="请输入密码" bindinput="getMiMa" style="height: 100rpx;text-align: center;"></input>
+		</view>
+		<view class="tt">
+			<image style="margin-left: 60rpx;margin-top: 25rpx;width: 50rpx;height: 50rpx;" src="/pages/images/pwd.png"></image> <input password="true" placeholder="请再次输入密码" bindinput="getQueRenMiMa" style="height: 100rpx;text-align: center;"></input>
+		</view>
+ 
+ 
+ 
+	</view>
+	<button bindtap="zhuce" style="background-color:#6CB92D;color:white;position: fixed;bottom: 0rpx; width:100% ">完成</button>
+</view>

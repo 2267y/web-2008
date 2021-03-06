@@ -1,0 +1,17 @@
+<!--pages/login/login.wxml-->
+<view class="login">
+	<view class="loginbox">
+		<view class="user " style="border-bottom:1rpx solid #F0F0F0">
+			<image class="login_img" src="../images/my.png"></image> <input placeholder="请输入你的账户" focus='{true}' auto-focus bindinput="getZhanghao" value="{{zhanghao}}"></input>
+		</view>
+		<view class="pwd">
+			<image class="login_img" src="../images/pwd.png"></image> <input password="true" focus='{true}' placeholder="请输入你的密码" bindinput="getMiMa" value="{{mima}}"></input>
+		</view>
+	</view>
+	<button bindtap="login" style="background-color:#6CB92D;color:white;width: 70%;border-radius: 40rpx;">登录</button>
+	<view style="display:flex;">
+		<text bindtap="register"   style="flex:1;text-align: center; ">注册</text>
+		<text bindtap="retrieve" style="flex:1;text-align: center;">忘记密码？</text>
+	</view>
+</view>
+ 

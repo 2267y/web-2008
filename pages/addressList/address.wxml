@@ -1,0 +1,51 @@
+<view class="container" style="padding:0">
+	<form bindsubmit="bindSave">
+		<view class="form-box">
+			<view class="row-wrap">
+				<view class="label">收货人</view>
+				<view class="label-right">
+					<input name="linkMan" class="input" bindinput="getInputvalname" type="text" placeholder="姓名" value="{{addressData.linkMan}}{{selcustname}}" />
+				</view>
+			</view>
+			<view class="row-wrap" style="border-bottom: 10rpx solid #eee;">
+				<view class="label">联系电话</view>
+				<view class="label-right">
+					<input name="mobile" class="input" bindinput="getInputvalphone" maxlength="11" type="number" placeholder="11位手机号码" value="{{addressData.mobile}}{{selphone}}" />
+				</view>
+			</view>
+			<picker style=" " bindchange="bindPickerChange" value="{{index}}" range="{{objectArray}}" range-key="areaname">
+				<view class="picker">
+					省：{{objectArray[index].areaname}}{{xiugai=='xiugai'?selprovince:''}} <text style="float: right;">﹀</text>
+				</view>
+			</picker>
+			<picker style="" bindchange="bindPickerChangeshi" value="{{shiindex}}" range="{{objectArrayshi}}" range-key="areaname">
+				<view class="pickershi">
+					市：{{objectArrayshi[shiindex].areaname}}{{xiugai=='xiugai'?selcity:''}} <text style="float: right;">﹀</text>
+				</view>
+			</picker>
+			<picker bindchange="bindPickerChangequ" value="{{quindex}}" range="{{objectArrayqu}}" range-key="areaname">
+				<view class="pickerqu">
+					区/县：{{objectArrayqu[quindex].areaname}}{{xiugai=='xiugai'?seldistrict:''}} <text style="float: right;">﹀</text>
+				</view>
+			</picker>
+			<view class="addr-details">
+				<view class="label">详细地址</view>
+				<view class="label-right">
+					<!--<input class="input" type="text" placeholder="街道门牌信息"/>-->
+					<input name="addres" auto-height placeholder="街道门牌信息" value="{{addressData.address}}{{seladdress}}" bindinput="getInputvaladdress" ></input>
+					</view>
+        </view>
+        <!-- <view class="row-wrap">
+            <view class="label">邮政编号</view>
+            <view class="label-right">
+                <input name="code" class="input" type="text" value="{{addressData.code}}{{wxaddress.postalCode}}"/>
+            </view>
+        </view> -->
+    </view>
+    <button wx:if="{{!selmodify}}" style="background-color:#E3AAD0;line-height: 45rpx;"  class="save-btn" formType="submit">保存</button>
+    <button wx:if="{{selmodify}}" style="background-color:#E3AAD0;line-height: 45rpx;"  class="save-btn"   bindtap="xiugaiadd" >修改地址</button>
+    <!-- <button wx:if="{{!addressData}}" type="primary" class="save-btn" bindtap="readFromWx">从微信读取</button> wx:if="{{addressData}}"-->
+    <!-- <button type="default" class="save-btn" bindtap="deleteAddress" data-addressid="{{addressData.id}}" wx:if="{{selmodify}}" >删除该地址</button> -->
+    <button type="default" style="line-height: 45rpx;" class="cancel-btn" bindtap="bindCancel">取消</button>
+    </form>
+</view>

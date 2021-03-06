@@ -1,0 +1,35 @@
+ <wxs module="dateUtil" src="../index/convertUtil.wxs"></wxs>
+ <view>
+ 	<!-- <view style="background-color:white;margin-bottom:20rpx">
+ 		<view style="display:flex;padding:20rpx;border-bottom:1rpx solid gray">
+ 			<image style="width:50rpx;height:50rpx" src="/pages/images/yue.png"></image>
+ 			<text style="flex:1">账户余额</text>
+ 			<text style="flex:1;text-align:right;font-size: 25rpx;">(可用余额 ¥ {{yue}})</text>
+ 			<image wx:if="{{!headd}}" bindtap="headd" style="width:50rpx;height:50rpx"  src="/pages/images/dx.png"></image>
+ 			<image wx:if="{{headd}}" bindtap="headd" style="width:50rpx;height:50rpx;" src="/pages/images/dxactive.png"></image>
+
+ 		</view>
+ 		<view style="display:flex;padding:20rpx;border-bottom:1rpx solid gray">
+ 			<image style="width:50rpx;height:50rpx" src="/pages/images/yinghangka.png"></image>
+ 			<text style="flex:1">账户余额充值</text>
+ 			<text bindtap="goTopups" style="flex:1;text-align:right">充值</text>
+ 			<image style="width:50rpx;height:50rpx" src="/pages/images/xiangyou.png" ></image>
+ 		</view>
+ 	</view> -->
+ 	<view style="background-color:white;">
+ 		<view style="width:100%;padding:20rpx;border-bottom:1rpx solid gray">
+ 			<text>在线支付</text>
+ 		</view>
+ 		<view style="width:100%;display:flex;padding:20rpx;border-bottom:1rpx solid gray">
+ 			<image style="width:50rpx;height:50rpx;" src="/pages/images/weixin.png"></image>
+ 			<text style="flex:1">微信</text>
+ 			<image wx:if="{{!headd2}}" bindtap="headd2" style="width:50rpx;height:50rpx;margin-right: 40rpx;" src="/pages/images/dx.png"></image>
+ 			<image wx:if="{{headd2}}" bindtap="headd2" style="width:50rpx;height:50rpx;margin-right: 40rpx;" src="/pages/images/dxactive.png"></image>
+ 		</view>
+		 
+ 	</view>
+ 	<view style="display:flex; position: fixed;width:100%;display:flex;justify-content:center;align-items:center;bottom:0;border-bottom:1rpx solid gray">
+ 		<view style="flex:1;padding:30rpx;text-align:center;"><text>需付款: </text><text>¥ {{dateUtil.toFix(ttMoney)}}</text></view>
+ 		<view style="flex:1;background-image: linear-gradient(to right, #FF0301 , #FF7600);padding:30rpx;text-align:center;color:white" bindtap="submit">确定</view>
+ 	</view>
+ </view>

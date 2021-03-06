@@ -1,0 +1,152 @@
+<!--
+此文件为开发者工具生成，生成时间: 2020/9/10 下午3:00:35 
+使用方法：
+在 pages\detail\detail.wxml 引入模板
+
+```
+<import src="detail.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 pages\detail\detail.wxss 中引入样式
+```
+@import "./detail.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="navbar">
+      <text class="itemactive sk-transparent sk-text-28-5714-905 sk-text" data-index="0" style="border: none; background-position-x: 50%;">
+        商品
+      </text>
+      <text class="item sk-transparent sk-text-28-5714-498 sk-text" data-index="1" style="background-position-x: 50%;">
+        详情
+      </text>
+      <text class="item sk-transparent sk-text-28-5714-328 sk-text" data-index="2" style="background-position-x: 50%;">
+        评论
+      </text>
+      <image style="width:30px;height:30px;margin-top: 5px;margin-right:10px" class="sk-image">
+      </image>
+    </view>
+    <view class="box">
+      <view style="padding:10px;background-color:white">
+        <view class="banner_warp">
+          <swiper autoplay="true" circular="true" class="banner" indicator-dots="true" current="1" current-item-id="true">
+            <swiper-item style="position: absolute; width: 100%; height: 100%; transform: translate(0%, 0px) translateZ(0px);">
+              <view class="li">
+                <image mode="aspectFill" class="sk-image">
+                </image>
+              </view>
+            </swiper-item>
+          </swiper>
+        </view>
+        <view class="df">
+          <view class="f2" style="height:25px;width:50px;">
+            <image style="height:100%;width:50px" class="sk-image">
+            </image>
+          </view>
+          <view class="f5">
+            <text class="sk-transparent sk-text-18-7500-920 sk-text">
+              75%酒精
+            </text>
+          </view>
+          <view class="f3 df">
+            <view class="f1">
+              <image class="img sk-image">
+              </image>
+            </view>
+            <view style="flex:1;">
+              <text class="sk-transparent sk-text-18-7500-591 sk-text">
+                已收藏
+              </text>
+            </view>
+          </view>
+        </view>
+        <view class="df" style="text-align:center;color:red;">
+          <text class="f1 sk-transparent sk-text-18-7500-147 sk-text" style="background-position-x: 50%;">
+            ¥360/箱
+          </text>
+          <text class="f1 sk-transparent sk-text-18-7500-554 sk-text" style="background-position-x: 50%;">
+            ¥12 / 瓶
+          </text>
+          <text class="f1 sk-transparent sk-text-18-7500-563 sk-text" style="background-position-x: 50%;">
+            ¥   12 / 瓶
+          </text>
+        </view>
+        <view class="df" style="color:#A7A7A7;">
+          <text class="f3 sk-transparent sk-text-18-7500-894 sk-text">
+            销量:61
+          </text>
+          <text class="f3 sk-transparent sk-text-18-7500-867 sk-text">
+            库存: 100
+          </text>
+          <text class="f4">
+          </text>
+        </view>
+        <view style="color:#A7A7A7;">
+          <text class="sk-transparent sk-text-18-7500-407 sk-text">
+            规格: 500ml/瓶*30瓶/箱
+          </text>
+        </view>
+        <view>
+          <text style="color:red" class="sk-transparent sk-opacity">
+            *
+          </text>
+          <text style="color:#A7A7A7;" class="sk-transparent sk-text-18-7500-952 sk-text">
+            提示:办事处撒谎精还要加撒发动机森特股份百度识图该行
+          </text>
+        </view>
+      </view>
+      <view class="df" style="font-size:12px;background-color:white;margin-top:10px;padding:10px 0 10px 0">
+        <view class="f1">
+          <image class="simg sk-image">
+          </image>
+          <text style="vertical-align:middle" class="sk-transparent sk-text-18-7500-611 sk-text">
+            品牌企业
+          </text>
+        </view>
+        <view class="f1">
+          <image class="simg sk-image">
+          </image>
+          <text style="vertical-align:middle" class="sk-transparent sk-text-18-7500-184 sk-text">
+            安全优质
+          </text>
+        </view>
+        <view class="f1">
+          <image class="simg sk-image">
+          </image>
+          <text style="vertical-align:middle" class="sk-transparent sk-text-18-7500-668 sk-text">
+            快速高效
+          </text>
+        </view>
+        <view class="f1">
+          <image class="simg sk-image">
+          </image>
+          <text style="vertical-align:middle" class="sk-transparent sk-text-18-7500-503 sk-text">
+            贴心服务
+          </text>
+        </view>
+      </view>
+      <view style="background-color:white;margin-top:10px;padding:10px">
+        <text class="sk-transparent sk-text-18-7500-289 sk-text">
+          产品参数
+        </text>
+        <text class="dian sk-transparent sk-text-18-7500-410 sk-text">
+          ···
+        </text>
+      </view>
+      <view>
+        <view style="border: none;" class="sk-transparent sk-text-18-7500-97 sk-text">
+          商品评价(5)
+        </view>
+        <view>
+          <button class="sk-transparent sk-button sk-pseudo sk-pseudo-circle">
+            查看全部评论
+          </button>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

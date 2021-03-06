@@ -1,0 +1,41 @@
+<view>
+	<view style="display:flex;background-color:white;padding-top: 30rpx;padding-bottom:30rpx">
+		<view style="flex:2;margin-top: 60rpx;padding-left: 0px;text-align: center;">
+			<image class="img" src="../images/dingwei.png"></image>
+		</view>
+		<view style="flex:12">
+			<view style="font-weight: bolder;"><text>收货人:</text><text style="margin-left:20rpx">{{!shareshow?shopList.name:morenAdress.custname}}</text></view>
+			<view style="font-weight: bolder;"><text>联系电话:</text><text style="margin-left:20rpx">{{!shareshow?shopList.phone:morenAdress.phone}}</text></view>
+			<view style="color:gray"><text>收货地址:</text><text style="margin-left:20rpx;font-size: 30rpx;">{{!shareshow?shopList.province:morenAdress.province}}{{!shareshow?shopList.city:morenAdress.city}}{{!shareshow?shopList.area:morenAdress.area}}{{!shareshow?shopList.address:morenAdress.address}}</text></view>
+		</view>
+		<view style="flex:2;margin-top: 60rpx;padding-left: 0px;text-align: center;" bindtap="goaddress">
+			<image class="img" src="../images/xiangyou.png"></image>
+		</view>
+	</view>
+  <view style="background-color: white;"><image style="width: 100%;height: 5rpx;" src="/pages/images/bar.jpg"></image></view>
+  <view style="margin-top:20rpx;display:flex;border-bottom:1rpx solid gray;background-color:white;padding:10rpx ">
+     <view style="flex:2;text-align:center;overflow: hidden;"><image style="height:50rpx;width: 240rpx;padding-left: 22rpx;" src="/pages/images/hotal.png"></image></view>
+     <view style="flex:18;margin-left:20rpx;font-weight: bolder;"><text>爱宠商城</text></view>
+  </view>
+	<view style="border-bottom:1rpx solid rgb(232, 232, 232); padding:20rpx;display:flex;background-color:white" wx:for="{{orderProList}}" wx:key="index">
+		<view style="flex:3">
+			<image style="width: 200rpx;height: 200rpx;" src="{{imgUrl}}/productimages/{{item.autoname}}"></image>
+		</view>
+		<view style="flex:7;display: flex;flex-direction: column;">
+			<view style="flex: 1 1 auto; "><text style="font-weight: bolder;">{{item.proname}}</text><text style="float:right">X{{item.count}}</text></view>
+			<!-- <view><text>规格:</text><text></text></view>
+			<view><text>发货时间:</text></view> -->
+			<view style="color:#E3AAD0;font-weight: bolder;flex: 1 1 auto; "><text  >¥</text><text>{{item.price}}</text></view>
+		</view>
+	</view>
+  <view style="padding:20rpx;background-color:white;margin-bottom:20rpx;font-weight: bolder;">商家配送</view>
+
+  <view style="background-color:white;height:100rpx;border-bottom:1rpx solid gray;padding:10rpx">
+   <text>小计 ¥  {{sum}}</text>
+  </view>
+	<view class="bottom">
+		<view class="left"><text>合计:</text>¥<text  style="color:#2EB6AA"> {{sum}}</text></view>
+		<view class="right" bindtap="gobuy"  ><text>提交订单</text></view>
+	</view>
+  <view style="background-color:white;height:300rpx;font-weight: bolder;"></view>
+</view>

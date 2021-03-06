@@ -1,0 +1,31 @@
+<view class="container" style="padding: 0;">
+	<!-- <view bindtap="addAddess" style="width: 100%;text-align: right; height: 80rpx;line-height: 80rpx;">
+		<text style="margin-right: 40rpx;">添加</text>
+	</view> -->
+	<view class="address-list"  >
+		<view class="a-address" wx:for="{{addressList}}" wx:key="index">
+			<view class="left-text {{item.isDefault? 'active':''}}" bindtap="selectTap" data-item="{{item}}" data-clickAdders="true">
+				<view class="name-tel">
+					{{item.name}} {{item.phone}}
+				</view>
+				<view class="address-box">
+					{{item.province}}{{item.city}}{{item.area}}{{item.address}}
+				</view>
+			</view>
+			<!-- bindtap="selectTap" -->
+			<view class="offerright" data-item="{{item}}" wx:if="{{item.phone}}">
+				<radio-group class="radio-group" bindchange="radioChange">
+					<label class="radio">
+						<radio value="{{item.id}}" checked="{{item.isdefault==1}}" color="#c93e3e" />设为默认地址
+					</label>
+				</radio-group>
+				<view class="right-edit" bindtap="deleteAddress" data-isdefault="{{item.isdefault}}" data-id="{{item.id}}" data-modify="true" data-item="{{item}}">删除</view>
+				<view class="right-edit" bindtap="editAddess" data-modify="true" data-item="{{item}}">编辑</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="bottom-box" bindtap="addAddess" style="text-align: center;background-color:#E3AAD0;">
+	<!-- <image class="fav-img-btn" src="/pages/images/add.png"></image> -->
+	<view class="add-btn" style="color:white">新增收货地址</view>
+</view>

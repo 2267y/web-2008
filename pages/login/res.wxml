@@ -1,0 +1,19 @@
+<!--pages/login/login.wxml-->
+
+
+<view class="login">
+	<view class="loginbox">
+		<view class="phone" style="border-bottom:1rpx solid #F0F0F0">
+			<image class="phone_img" style="margin-top: 40rpx;margin-left: 36rpx;" src="../images/my.png"></image> <input style="width: 46%;" auto-focus placeholder="请输入你的手机号" bindinput="getPhone"></input>
+		</view>
+		<view class="pwd" style="border-bottom:1rpx solid #999; border-radius: 0%;">
+			<image class="login_img" style="margin-top: 25rpx;width: 60rpx;" src="../images/pwd.png"></image> <input style="width: 48%;" placeholder="请输入验证码" bindinput="getYanZhen"></input><button style="background-color:#6CB92D" disabled="{{disabled}}" bindtap="huoQuyzm" class="yzBtn">{{code}}</button>
+		</view>
+		<view style=" display: flex;padding:10rpx 0rpx 10rpx 40rpx;">
+			<image bindtap="yuedu" style="width:50rpx;height:50rpx" wx:if="{{!choose}}" src="/pages/images/dx.png"></image>
+			<image bindtap="yuedu" style="width:50rpx;height:50rpx" wx:if="{{choose}}" src="/pages/images/dxactive.png"></image>
+			<text bindtap="yueduDetail" style="color:gray">我已阅读并同意《注册协议》</text>
+		</view>
+	</view>
+	<button bindtap="goNext" style="background-color:#6CB92D;color:white;width: 70%;border-radius: 40rpx;">下一步</button>
+</view>

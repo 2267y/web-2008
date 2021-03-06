@@ -1,0 +1,23 @@
+/* pages/user/order/order.wxss */
+page{
+  background-color: rgb(238, 237, 237);
+}
+.navbar{
+  display: flex;
+  text-align: center;
+  padding: 20rpx 20rpx 0rpx 20rpx;
+  margin-top: 10rpx;
+  background-color: white;
+  
+}
+.item {
+  flex: 1;
+  padding-bottom:20rpx ;
+}
+.active{
+  color: #6CB92D;
+  border-bottom: 5rpx solid #6CB92D;
+}
+.cont_count{
+  text-align: center;
+}

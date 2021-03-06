@@ -1,0 +1,25 @@
+<view>
+	<view class="df" style="padding: 20rpx 0 20rpx 20rpx;border-bottom:1rpx solid #E9E9E9;height:150rpx;line-height: 150rpx;">
+		<view class="title f1"><text class="bloder">头像</text></view>
+		<view class="f1" style="text-align:right;margin-right:20rpx" bindtap="headimage">
+			<image style="width: 150rpx;height: 100%;border: 1rpx solid 6CB92D;border-radius: 50%;" src="{{imgUrl}}/customerImages/{{getPersonalInfo.autoname}}"></image>
+		</view>
+	</view>
+	<view class="df" style="padding: 20rpx 0 20rpx 20rpx;border-bottom:1rpx solid #E9E9E9">
+		<view class="title f1"><text class="bloder">账户</text></view>
+		<view  class="f1" style="text-align:right;margin-right:20rpx;"><text style="margin-right:20rpx;color:gray" >{{getPersonalInfo.name}}</text>
+
+		</view>
+	</view>
+	
+	<view class="df" style="padding: 20rpx 0 20rpx 20rpx;border-bottom:1rpx solid #E9E9E9">
+		<view class="title f1"><text class="bloder">密码</text></view>
+		<view bindtap="goModify" data-biaoshi="password" class="f1" style="text-align:right;margin-right:20rpx;"><text style="margin-right:20rpx;color:gray">{{getPersonalInfo.password}}</text>
+			<image src="../../images/xiangyou.png" style="left: 10rpx;height: 40rpx;width: 40rpx;position: relative;top: 10rpx;"></image>
+		</view> 
+	</view>
+	
+	<view>
+		<button style="background-color:#6CB92D;color:white;margin-top: 20rpx;width: 80%;" bindtap="clerLogin">退出登录</button>
+	</view>
+</view>

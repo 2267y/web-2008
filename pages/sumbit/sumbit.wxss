@@ -1,0 +1,4 @@
+/* pages/sumbit/sumbit.wxss */
+ page{
+   background-color: rgb(240, 240, 240);
+ }

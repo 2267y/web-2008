@@ -1,0 +1,24 @@
+<view class="main">
+  <view class="categroy-left">
+   <!-- 当前项的id等于item项的id或者当前的下标等于item的下标时，那个就是当前状态- -->
+       <view wx:for="{{category}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}"
+           bindtap="switchTab"
+           class="cate-list {{curIndex === index?'active':''}}">{{item.name}}</view>
+   </view>
+   <scroll-view class="categroy-right" scroll-y="{{}}" data-id="{{toView}}" scroll-with-animation="true">
+     <view wx:if="{{proclassList}}" style="display: flex;flex-wrap: wrap">
+       <block wx:for="{{proclassList}}"   wx:key="idx" >
+         <view id="{{item.id}}" class="cate-box" style="flex:0 0 50%">
+				 <view>
+				 <image mode="widthFix" bindtap="goDetail"  data-type="{{item.type}}" data-proid="{{item.id}}" style="width:100%" src="{{imgUrl}}productimages/{{item.autoname}}"></image>
+				 </view>
+           <view class="cate-title">
+             <text>{{item.proname}}</text>
+           </view>
+         </view>
+       </block> 
+     </view>
+      <!-- 若无数据，则显示暂无数据 -->
+      <view class='nodata' wx:else>该分类暂无数据</view>
+    </scroll-view>
+</view>

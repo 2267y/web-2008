@@ -1,0 +1,15 @@
+<!--pages/login/login.wxml-->
+
+
+<view class="login" >
+	<view class="loginbox">
+		<view class="phone">
+			<image class="phone_img" src="../images/my.png"></image> <input style="width: 49%;" placeholder="请输入你的手机号" bindinput="getPhone"></input>
+		</view>
+		<view class="pwd" style="border:1rpx solid F0F0F0">
+			<image class="login_img" src="../images/pwd.png"></image> <input style="width: 45%;" placeholder="请输入验证码" bindinput="getYanZhen"></input><button disabled="{{disabled}}" bindtap="huoQuyzm" class="yzBtn" style="margin-top: 45rpx;">{{code}}</button>
+		</view>
+	</view>
+	<button bindtap="goNext" style="background-color:#6CB92D;color:white;width: 70%;border-radius: 40rpx;">下一步</button>
+	<!-- <button bindtap="zhuce" style="background-color:#FFCD42">注册</button> -->
+</view>

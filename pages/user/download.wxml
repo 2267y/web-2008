@@ -1,0 +1,13 @@
+<view class="img"  wx:if="{{dtype=='wx'}}"  style="width: 100%;">
+	<view style="width: 85%;margin: 100rpx auto;">
+		<image src="/pages/images/wxgongzhao.jpg" style="height: 600rpx;"></image>
+	</view>
+</view>
+<view wx:if="{{dtype=='app'}}" class="img" style="width: 100%;">
+	<view style="width: 85%;margin: 100rpx auto;">
+		<image src="/pages/images/app.png" style="height: 600rpx;"></image>
+	</view>
+</view>
+<view>
+	<image src="/pages/images/lbg.jpg" bindload="autoImage" style="width:{{imageWidth}};height:{{ imageHeight }}" />
+</view>

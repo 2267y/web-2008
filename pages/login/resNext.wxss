@@ -1,0 +1,85 @@
+/* pages/login/resNext.wxss */
+/* @import "../login/res.wxss"; */
+.loginbox {
+  background-color: white;
+  position: absolute;
+  width: 85%;
+  border-radius: 30rpx;
+  margin-top: 105rpx;
+  margin-bottom: 60rpx;
+  display: flex;
+  flex-flow: column;
+  right: 58rpx;
+ 
+}
+.bg {
+  height: 1700rpx;
+  width: 100%;
+}
+.tt{
+  display:flex
+}
+.select_box {
+  background: white;
+  width: 620rpx;
+  /* margin: 0 auto; */
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: left;
+  position: relative;
+}
+
+.select {
+   
+  box-sizing: border-box;
+  width: 100%;
+  height: 86rpx;
+  /* border: 1px solid #efefef; */
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+}
+
+.select_text {
+  font-size: 28rpx;
+  flex: 1;
+  color: rgb(102, 102, 102);
+  line-height: 86rpx;
+  height: 86rpx;
+}
+
+.select_img {
+  width: 40rpx;
+  height: 40rpx;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.select_img_rotate {
+  transform: rotate(180deg);
+}
+ 
+.option_box {
+  position: absolute;
+  top: 86rpx;
+  width: 100%;
+  /* border: 1px solid #efefef; */
+  box-sizing: border-box;
+  height: 0;
+  overflow-y: auto;
+  border-top: 0;
+  background: white;
+  transition: height 0.3s;
+  z-index: 100;
+}
+
+.option {
+  background-color: white;
+  display: block;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  border-bottom: 1px solid #F0F0F0;
+  padding: 10rpx;
+  color: black;
+}

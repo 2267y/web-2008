@@ -1,0 +1,48 @@
+<view style="background-color:#afafaf" >
+	<view class="navbar" >
+		<text wx:for="{{navbar}}" data-index="{{index}}" class="item{{currentIndex==index?'active':''}}" bindtap="navbarTab" wx:key="unique">{{item}}</text>
+	</view>
+	 
+	<view hidden="{{currentIndex!==0}}" class='box'> 
+	<view style="padding:20rpx"><text>选择充值金额</text></view>
+		<view class="topView">
+			<block wx:for="{{statusList}}" wx:key="id">
+				<view id="{{item.id}}" class="{{item.id == isChecked ? 'active':''}} topChild" bindtap="choiceStatus">{{item.statusName}}</view>
+			</block>
+		</view>
+		<view style="display:flex;padding: 10rpx 0 10rpx 0;background-color: white;">
+			<text style="flex:1;padding-left: 20rpx;background-color: white;">其他金额</text><input bindinput="getnum" placeholder="输入金额" style="flex: 2;padding:5rpx;border: 1rpx solid gray;border-radius: 15rpx;"></input><text style="flex:1;text-align: center;">元</text>
+		</view>
+		<!-- <view style=" display:flex;background-color:white;margin-top: 30rpx;padding-bottom: 20rpx;padding-top: 20rpx;">
+		 <image style="width:50rpx;height:50rpx;margin-left: 20rpx;" src="/pages/images/zfbzhifu.png"></image>
+			<text style="margin-right: 40rpx;flex:1;margin-left: 40px;">支付宝</text>
+			<view style="flex:1;text-align: right;margin-right: 50rpx;">
+				<image class="img" catchtap='onChangeTap' data-func="ZF" src="{{isClick ? '../images/choosactive.png' : '../images/choose.png'}}"></image>
+			</view>
+		</view> -->
+    <view style="padding:20rpx"><text>支付方式</text></view>
+		<view style=" background-color:white;padding-bottom: 20rpx; display:flex;padding-top:20rpx">
+			<image style="width:50rpx;height:50rpx;margin-left: 20rpx;" src="/pages/images/weixin.png"></image>
+			<text style="margin-right: 40rpx;flex:1;margin-left: 40px;">微信支付</text>
+			<view style="flex:1;text-align: right;margin-right: 50rpx;">
+				<image class="img" catchtap='wxonChange'  data-wxfunc="WX" src="{{wxisclick ? '/pages/images/clooseActive.png' : '/pages/images/cloose.png'}}"></image>
+			</view>
+		</view>
+		<view style=" background-color:white;padding-bottom: 20rpx; display:flex;padding-top:20rpx">
+			<image style="width:50rpx;height:50rpx;margin-left: 20rpx;" src="/pages/images/zfb.png"></image>
+			<text style="margin-right: 40rpx;flex:1;margin-left: 40px;">支付宝</text>
+			<view style="flex:1;text-align: right;margin-right: 50rpx;">
+				<image class="img" catchtap='zfbonChange'  data-zfbfunc="ZFB" src="{{zfbisclick ? '/pages/images/clooseActive.png' : '/pages/images/cloose.png'}}"></image>
+			</view>
+		</view>
+		<view style="text-align: center;margin-top: 100rpx;"><text class="button" bindtap="ziFu">确认支付</text></view>
+	</view>
+	<view hidden="{{currentIndex!==1}}" class='box'>
+        <view style="background-color:white;padding:20rpx;margin-top: 20rpx;">当前余额: ¥<text style="color:#EB6876;margin-left: 20rpx;">{{yue}}</text></view>
+        <view style="padding:5rpx 0 5rpx 20rpx">请输入充值卡信息</view>
+        <view style="margin-bottom: 60rpx;display:flex;background-color:white;line-height: 90rpx;padding-left: 10px;" ><text style="flex:3">充值卡卡号:</text><input style="flex:7;height:90rpx;padding: 0 0 0 20rpx;background-color: white;" placeholder="充值卡号" value="{{cardno}}" bindinput="getCardno"></input></view>
+        <view style="width:100%;text-align: center;" bindtap="chongZhi"><text style="display:block; width:90%;margin:0 auto;background-color:#EB6876;color:white;height:90rpx;border-radius:20rpx;line-height: 90rpx;">立即充值</text></view>
+        <view style="margin: 20rpx;">温馨提示</view>
+        <view style="margin-left:20rpx;color:#EB6876">1.请认真核对充值卡卡号,以免发生资金损失</view>
+	</view>
+</view>

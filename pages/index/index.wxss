@@ -1,0 +1,157 @@
+page {
+  background-color: #EEEEEE;
+}
+
+.top {
+  background-color: #6CB92D;
+  height: 80rpx;
+  width: 100%;
+
+  position: fixed;
+  top: 0rpx;
+  display: flex;
+  z-index: 10;
+
+}
+
+.topbtn {
+  background: none;
+  font-weight: normal;
+  width: 25% !important;
+}
+
+.topinput {
+  background-color: white;
+  display: block;
+  height: 60rpx;
+  margin-top: 10rpx;
+  width: 65%;
+  margin-left: 60rpx;
+  padding-left: 20rpx;
+  border-radius: 40rpx;
+}
+
+/* 轮播图样式 */
+
+.carousel {
+  width: 100%;
+  background-color: rebeccapurple;
+ 
+}
+
+.carousel_swiper {
+  width: 100%;
+  height: 400rpx;
+  display: block;
+  position: relative;
+  background: #f4f4f4;
+}
+
+.carouselImg {
+  width: 100%;
+  height: inherit;
+}
+
+/* 分类 */
+.classList {
+  height: 400rpx;
+  box-shadow: border-box;
+  background-color: white;
+}
+
+.classList_bottom,
+.classList_top {
+  padding-top: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  height: 520rpx;
+  background-color: white;
+  text-align: center;
+}
+
+.textClass {
+  margin-top: 40rpx;
+}
+
+.proClass {
+  flex: 0 0 33.333333%;
+}
+
+.classImg {
+
+  width: 60%;
+  margin: 0 auto;
+  display: block;
+}
+
+/* 公告 */
+.gonggao {
+  margin-top: 20rpx;
+}
+
+.notice_box {
+
+  display: flex;
+  flex-direction: row;
+  height: 80rpx;
+  background-color: white;
+}
+
+.notice {
+  width: 100rpx;
+  padding: 0 20rpx;
+  display: flex;
+  align-items: center;
+  color: red;
+}
+
+.notice image {
+  width: 60rpx;
+  height: 60rpx;
+
+}
+
+.swiper_box {
+  width: 100%;
+  margin-top: 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  letter-spacing: 2px;
+}
+
+.swiper-item {
+  font-size: 30rpx;
+}
+
+/* 人气推荐 */
+
+.renqi {
+  background-color: #6CB92D;
+  display: flex;
+  margin-top: 20rpx;
+  color: white;
+  padding: 20rpx;
+}
+
+.rqimg {
+  width: 50rpx;
+  margin-left: 20rpx;
+}
+
+.rqprod {
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+
+.clen {
+  clear: both;
+}
+
+.shopcar {
+  background-color: #62B5B9;
+  flex: 4;
+  border-radius: 40rpx;
+  text-align: center;
+  margin-right: 10rpx;
+}

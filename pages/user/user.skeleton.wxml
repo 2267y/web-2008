@@ -1,0 +1,155 @@
+<!--
+此文件为开发者工具生成，生成时间: 2020/9/10 下午2:45:13 
+使用方法：
+在 pages\user\user.wxml 引入模板
+
+```
+<import src="user.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 pages\user\user.wxss 中引入样式
+```
+@import "./user.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view>
+      <view class="head sk-image">
+        <view class="headImg" style="border: none;">
+        </view>
+        <view class="headName">
+          <view class="sk-transparent sk-text-18-7500-738 sk-text">
+            陈治巧
+          </view>
+          <view class="sk-transparent sk-text-18-7500-771 sk-text">
+            我的账户&gt;
+          </view>
+        </view>
+      </view>
+      <view class="myOrder">
+        <view class="df orderhead">
+          <view class="f1 sk-transparent sk-text-18-7500-881 sk-text">
+            我的订单
+          </view>
+          <view class="f1 tr sk-transparent sk-text-18-7500-508 sk-text" data-currenttab="0" style="color: gray; background-position-x: 100%;">
+            查看所有订单&gt;
+          </view>
+        </view>
+        <view class="df orderImgtime" style="border: none;">
+          <view class="f1 dfc" data-currenttab="1">
+            <image class="orderIcon sk-image">
+            </image>
+            <text class="sk-transparent sk-text-18-7500-436 sk-text" style="background-position-x: 50%;">
+              待付款
+            </text>
+          </view>
+          <view class="f1 dfc" data-currenttab="2">
+            <image class="orderIcon sk-image">
+            </image>
+            <text class="sk-transparent sk-text-18-7500-340 sk-text" style="background-position-x: 50%;">
+              待发货
+            </text>
+          </view>
+          <view class="f1 dfc" data-currenttab="3">
+            <image class="orderIcon sk-image">
+            </image>
+            <text class="sk-transparent sk-text-18-7500-400 sk-text" style="background-position-x: 50%;">
+              待收货
+            </text>
+          </view>
+          <view class="f1 dfc" data-currenttab="4">
+            <image class="orderIcon sk-image">
+            </image>
+            <text class="sk-transparent sk-text-18-7500-255 sk-text" style="background-position-x: 50%;">
+              待评价
+            </text>
+          </view>
+        </view>
+      </view>
+      <view class="myMuney">
+        <view class="df orderhead">
+          <view class="f1 sk-transparent sk-text-18-7500-699 sk-text">
+            我的资产
+          </view>
+          <view class="f1 tr">
+          </view>
+        </view>
+        <view class="df orderImgtime" style="border: none;">
+          <view class="f1 dfc">
+            <image class="img sk-image">
+            </image>
+          </view>
+          <view class="f5 dfc">
+            <text class="sk-transparent sk-text-18-7500-849 sk-text" style="background-position-x: 50%;">
+              账户余额: ¥ 500.00
+            </text>
+          </view>
+          <view class="f5 dfc" style="text-align:right">
+            <text style="color: gray; background-position-x: 100%;" class="sk-transparent sk-text-18-7500-644 sk-text">
+              立即充值&gt;
+            </text>
+          </view>
+        </view>
+      </view>
+      <view class="myTools">
+        <view class="df orderhead">
+          <view class="f1 sk-transparent sk-text-18-7500-171 sk-text">
+            我的工具
+          </view>
+          <view class="f1 tr" style="color:gray">
+          </view>
+        </view>
+        <view class="df orderImgtimen" style="border: none;">
+          <view class="f1 dfc">
+            <image class="orderIconn sk-image">
+            </image>
+            <text class="sk-transparent sk-text-18-7500-472 sk-text" style="background-position-x: 50%;">
+              我的收藏
+            </text>
+          </view>
+          <view class="f1 dfc">
+            <image class="orderIconn sk-image">
+            </image>
+            <text class="sk-transparent sk-text-18-7500-978 sk-text" style="background-position-x: 50%;">
+              我的足迹
+            </text>
+          </view>
+          <view class="f1 dfc">
+            <image class="orderIconn sk-image">
+            </image>
+            <text class="sk-transparent sk-text-18-7500-630 sk-text" style="background-position-x: 50%;">
+              地址管理
+            </text>
+          </view>
+          <view class="f1 dfc">
+            <image class="orderIconn sk-image">
+            </image>
+            <text class="sk-transparent sk-text-18-7500-149 sk-text" style="background-position-x: 50%;">
+              充值记录
+            </text>
+          </view>
+        </view>
+        <view class="df orderImgtimen" style="border: none;">
+          <view class="f1 dfc">
+            <image class="orderIconn sk-image">
+            </image>
+          </view>
+          <view class="f1 dfc" data-stype="wx">
+            <image class="orderIconn sk-image">
+            </image>
+          </view>
+          <view class="f1 dfc" data-stype="app">
+            <image class="orderIconn sk-image">
+            </image>
+          </view>
+          <view class="f1">
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
